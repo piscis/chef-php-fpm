@@ -47,6 +47,11 @@ define :fpm_pool, :template => "pool.conf.erb", :enable => true do
     :max_spare_servers => node['php-fpm']['pool'][pool_name]['max_spare_servers'],
     :max_requests => node['php-fpm']['pool'][pool_name]['max_requests'],
     :catch_workers_output => node['php-fpm']['pool'][pool_name]['catch_workers_output'],
+    :error_log => node['php-fpm']['pool'][pool_name]['php_admin_value']['error_log'],
+    :memory_limit => node['php-fpm']['pool'][pool_name]['php_admin_value']['memory_limit'],
+    :log_errors => node['php-fpm']['pool'][pool_name]['php_admin_flag']['log_errors'],
+    :display_errors => node['php-fpm']['pool'][pool_name]['php_flag']['display_errors'],
+    :chdir => node['php-fpm']['pool'][pool_name]['chdir']
     :params => params
     )
     notifies :restart, "service[php-fpm]"

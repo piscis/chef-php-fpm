@@ -177,7 +177,7 @@ pm.max_requests = <%= @max_requests %>
 
 ; Chdir to this directory at the start. This value must be an absolute path.
 ; Default Value: current directory or / when chroot
-;chdir = /var/www
+chdir = <%= @chdir %>
 
 ; Redirect worker stdout and stderr into main error log. If not set, stdout and
 ; stderr will be redirected to /dev/null according to FastCGI specs.
@@ -218,10 +218,10 @@ catch_workers_output = <%= @catch_workers_output %>
 ; Default Value: nothing is defined by default except the values in php.ini and
 ;                specified at startup with the -d argument
 ;php_admin_value[sendmail_path] = /usr/sbin/sendmail -t -i -f www@my.domain.com
-;php_flag[display_errors] = off
-;php_admin_value[error_log] = /var/log/php-fpm/www-error.log
-;php_admin_flag[log_errors] = on
-;php_admin_value[memory_limit] = 128M
+php_flag[display_errors] = <%= @display_errors %>
+php_admin_value[error_log] = <%= @error_log %>
+php_admin_flag[log_errors] = <%= @log_errors %>
+php_admin_value[memory_limit] = <%= @memory_limit %>
 
 ; Set session path to a directory owned by process user
 ;php_value[session.save_handler] = files
