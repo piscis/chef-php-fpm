@@ -24,13 +24,6 @@ default['php-fpm']['pid'] = pid
 default['php-fpm']['error_log'] =  error_log
 default['php-fpm']['log_level'] = "notice"
 
-
-default['php-fpm']['pool']['www']['php_admin_value']['error_log'] = error_log
-default['php-fpm']['pool']['www']['php_admin_value']['memory_limit'] = "128M"
-default['php-fpm']['pool']['www']['php_admin_flag']['log_errors'] = "on"
-default['php-fpm']['pool']['www']['php_flag']['display_errors'] = "off"
-default['php-fpm']['pool']['www']['chrdir']= ""
-
 default['php-fpm']['pools'] = ["www","testpool"]
 
 default['php-fpm']['pool']['www']['listen'] = "/var/run/php-fpm-www.sock"
