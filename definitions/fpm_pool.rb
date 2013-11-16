@@ -51,7 +51,7 @@ define :fpm_pool, :template => "pool.conf.erb", :enable => true do
     :memory_limit => node['php-fpm']['pool'][pool_name]['php_admin_value']['memory_limit'],
     :log_errors => node['php-fpm']['pool'][pool_name]['php_admin_flag']['log_errors'],
     :display_errors => node['php-fpm']['pool'][pool_name]['php_flag']['display_errors'],
-    :chdir => node['php-fpm']['pool'][pool_name]['chdir']
+    :chdir => node['php-fpm']['pool'][pool_name]['chdir'],
     :params => params
     )
     notifies :restart, "service[php-fpm]"
