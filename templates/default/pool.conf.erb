@@ -222,6 +222,9 @@ php_flag[display_errors] = <%= @display_errors %>
 php_admin_value[error_log] = <%= @error_log %>
 php_admin_flag[log_errors] = <%= @log_errors %>
 php_admin_value[memory_limit] = <%= @memory_limit %>
+php_admin_value[upload_max_filesize] = <%= @upload_max_filesize %>
+php_admin_value[post_max_size] = <%= @post_max_size %>
+
 
 ; Set session path to a directory owned by process user
 ;php_value[session.save_handler] = files
